@@ -50,7 +50,14 @@ public class StatsService {
     }
 
     public int monthAboveAverage(long[] sales) {
-
+        int counter = 0;
+        long averageSale = average(sales);
+        for (long sale : sales) {
+            if (sale > averageSale) {
+                counter++;
+            }
+        }
+        return counter;
     }
 }
 

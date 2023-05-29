@@ -45,8 +45,17 @@ public class TestStatsService {
     public void testMonthBellowAverage() {
         StatsService service = new StatsService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        long actual = service.monthBellowAverage(sales);
-        long expected = 5;
+        int actual = service.monthBellowAverage(sales);
+        int expected = 5;
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testMonthAboveAverage() {
+        StatsService service = new StatsService();
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        int actual = service.monthAboveAverage(sales);
+        int expected = 5;
         Assertions.assertEquals(expected, actual);
     }
 }
